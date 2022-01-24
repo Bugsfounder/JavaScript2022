@@ -6,19 +6,29 @@ showNotes();
 let addBtn = document.getElementById('addBtn');
 
 addBtn.addEventListener('click', (e) => {
-
     let addText = document.getElementById('addText');
-    let notes = localStorage.getItem('notes');
-    if (notes == null) {
-        notesObj = [];
+    let noteTitle = document.getElementById('noteTitle');
+    let warn = document.getElementById('warn');
+    if ((addText.value.length >= 5 && noteTitle.value.length >= 4) && (/\S/.test(addText.value) && /\S/.test(noteTitle.value))) {
+        let newNote = {
+            'title': noteTitle.value,
+            'description': addText.value
+        };
+        let notes = localStorage.getItem('notes');
+        if (notes == null) {
+            notesObj = [];
+        } else {
+            notesObj = JSON.parse(notes)
+        }
+        notesObj.push(newNote);
+        localStorage.setItem('notes', JSON.stringify(notesObj));
+        addText.value = '';
+        noteTitle.value = '';
+        showNotes();
+        warn.innerHTML = "Note Added";
     } else {
-        notesObj = JSON.parse(notes)
+        warn.innerHTML = "Enter Title more than 4 character and description more than 5 characters"
     }
-    notesObj.push(addText.value);
-    localStorage.setItem('notes', JSON.stringify(notesObj));
-    addText.value = '';
-
-    showNotes();
 });
 
 // function to show notes form localstorage
@@ -34,8 +44,8 @@ function showNotes() {
         html += ` 
         <div class="noteCard card mx-2 my-2" style="width: 18rem;">
             <div class="card-body">
-                <h5 class="card-title">Note ${index + 1}</h5>
-                <p class="card-text">${element}</p>
+                <h5 class="card-title">${element.title}</h5>
+                <p class="card-text">${element.description}</p>
                 <button id=${index} onClick="deleteNote(this.id)" class="btn btn-primary">Delete Note</button>
             </div>
         </div>`;
@@ -60,6 +70,8 @@ function deleteNote(index) {
     notesObj.splice(index, 1)
     localStorage.setItem('notes', JSON.stringify(notesObj));
     showNotes();
+    let warn = document.getElementById('warn');
+    warn.innerHTML = "Note Deleted";
 }
 
 let searchQuery = document.getElementById('searchQuery');
@@ -74,6 +86,7 @@ searchQuery.addEventListener('input', () => {
         } else {
             element.style.display = 'none';
         }
+
     });
 });
 

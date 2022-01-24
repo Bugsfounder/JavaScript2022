@@ -39,13 +39,28 @@
         <h1 class="text-center">Welcome to Magic Notes App</h1>
 
         <div class="card">
+
+
             <div class="card-body">
-                <h5 class="card-title">Add a Note</h5>
+                <h5 class="card-title" id="warn">Add a Note</h5>
+                <!-- <div class="mb-3">
+                    <textarea class="form-control" id="addText" rows="3"></textarea>
+                </div> -->
+
                 <div class="mb-3">
+                    <label for="noteTitle" class="form-label">Note Title</label>
+                    <input class="form-control" id="noteTitle"></input>
+                </div>
+                <div class="mb-3">
+                    <label for="addText" class="form-label">Note Description</label>
                     <textarea class="form-control" id="addText" rows="3"></textarea>
                 </div>
+
+
                 <button class="btn btn-primary" id="addBtn">Add Note</button>
             </div>
+
+
         </div>
 
         <h1 class="my-3">Your Notes</h1>
