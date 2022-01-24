@@ -25,6 +25,16 @@ z = Math.max(2, 4, 23, 543, 23, 23, 23, 23, 23); // NEGATIVE VALUES INTO POSITIV
 a = (0,1)
 a100 = a*100 = (0, 100)
 a10_100 = 10+a*(100 - 10)
+
+a=10
+Formula for 10 to 100 random numbers:
+10 + a*(100-10)
+= 10 + 100a - 10a
+= 10 + 100(0,1) - 10(0,1)
+= 10 + (0,100) - (0,10)
+= 10 + (0,90)
+= (10,100)
+Hence proved...😁
 */
 
 z = Math.random() * 100; // RANDOM NUMBERS BETWEEN 0 TO 100
