@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="owner.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>Understanding HTML DOM - JavaScript Course</title>
 </head>
 
@@ -29,28 +31,29 @@
         <div class="child">Child 4</div>
         <form action="none.html" method="post">
             <a href="https://codewithharry.com/">Click Here</a>
-            <br>
-            <br>
-            <hr>
-            <br>
+
             Search this Website: <input type="text" name="hello" id="name" placeholder="Enter your name">
-            <button id="btn">Submit Form</button>
+            <button class="btn btn-primary" id="btn">Submit Form</button>
             <!-- <input type="button" id="btn" value="submit"> -->
         </form>
+        <div class="no">This is a dummy div 1</div>
+        <div class="no">This is a dummy div 2</div>
+        <div class="no">This is a dummy div 3</div>
+        <h1>Students List</h1>
+
+        <div class="container">
+            <div id="students"></div>
+            <button id="myBtn" class="btn btn-primary">Your Button</button>
+            <button class="btn btn-primary">Fetch Data</button>
+            <div id="content"></div>
+        </div>
+
+
     </div>
-    <br>
-    <hr>
-    <br>
-    <div class="no">This is a dummy div 1</div>
-    <div class="no">This is a dummy div 2</div>
-    <div class="no">This is a dummy div 3</div>
-    <h1>Students List</h1>
-    <ul id="students">
-
-    </ul>
-
-
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
 <!-- <script src="js/12_UnderstandingDOM&Creating aWebsiteLayout.js"></script> -->
 <!-- <script src="js/14_HTMLElementSelectors.js"></script> -->
 <!-- <script src="js/15_Children,Parent&TraversingtheDOM.js"></script> -->
@@ -71,5 +74,6 @@
 <!-- <script src="js/39_2_PromisesBasics,Promise.then()&Promise.catch().js"></script> -->
 <!-- <script src="js/39_quickQuiz.js"></script> -->
 <script src="js/41_Arrowfunctions.js"></script>
+<script src="js/42_Fetchapi.js"></script>
 
 </html>
