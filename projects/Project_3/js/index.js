@@ -29,7 +29,7 @@ const setObjectToHtmlDom = (obj) => {
                     <div class="card-body">
                         <h5 class="card-title">${element.title}</h5>
                         <p class="card-text">${element.description}</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <a href="#" class="btn btn-primary">Read More</a>
                     </div>
             </div>
         </div>`
@@ -72,36 +72,46 @@ fetchNews(newsApi).then(data => {
     });
 
     // // IF USER CLICKS ON NEXT BUTTON THEN FETCH NEXT PAGE NEWS
-    document.getElementById('next').addEventListener('click', () => {
-        if (page > 1 && page <= numOfPages) {
-            page++;
-            newsApi = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${apiKey}&page=${page}&pageSize=${pageSize}`;
-            // FETCHING ALL NEWS AND DISPLAY IT ON THE DOM
-            fetchNews(newsApi).then(data => {
-                setObjectToHtmlDom(data);
-                console.log(data, category);
-            });
-            document.getElementById('previous').removeAttribute('disabled');
-        } else {
-            document.getElementById('next').setAttribute('disabled', 'true');
-        }
-    });
+    // document.getElementById('next').addEventListener('click', () => {
+    //     if (page > 1 && page <= numOfPages) {
+    //         page++;
+    //         newsApi = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${apiKey}&page=${page}&pageSize=${pageSize}`;
+    //         // FETCHING ALL NEWS AND DISPLAY IT ON THE DOM
+    //         fetchNews(newsApi).then(data => {
+    //             setObjectToHtmlDom(data);
+    //             console.log(data, category);
+    //         });
+    //         document.getElementById('previous').removeAttribute('disabled');
+    //     } else {
+    //         document.getElementById('next').setAttribute('disabled', 'true');
+    //     }
+    // });
 
     // // IF USER CLICKS ON PREVIOUS BUTTON FETCH PREVIOUS PAGE NEWS
-    document.getElementById('previous').addEventListener('click', (e) => {
-        if (page > 1 && page <= numOfPages) {
-            page--;
-            newsApi = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${apiKey}&page=${page}&pageSize=${pageSize}`;
-            // FETCHING ALL NEWS AND DISPLAY IT ON THE DOM
-            fetchNews(newsApi).then(data => {
-                setObjectToHtmlDom(data);
-            });
-            document.getElementById('next').removeAttribute('disabled');
-        } else {
-            document.getElementById('previous').setAttribute('disabled', 'true');
+    // document.getElementById('previous').addEventListener('click', (e) => {
+    //     if (page > 1 && page <= numOfPages) {
+    //         page--;
+    //         newsApi = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${apiKey}&page=${page}&pageSize=${pageSize}`;
+    //         // FETCHING ALL NEWS AND DISPLAY IT ON THE DOM
+    //         fetchNews(newsApi).then(data => {
+    //             setObjectToHtmlDom(data);
+    //         });
+    //         document.getElementById('next').removeAttribute('disabled');
+    //     } else {
+    //         document.getElementById('previous').setAttribute('disabled', 'true');
+    //     }
+    // });
+
+    // ADDING SCROLL EVENT LISTENNER ON THE WINDOW TO MAKE INFINITE SCROLL AND FETCHING NEXT NEWS\ window.
+    addEventListener('scroll', () => {
+        if ((window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight)) {
+            page++; pageSize = 3
+            newsApi = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${apiKey}&page=${page}&pageSize=${pageSize}`; if (page > 1 && page <= numOfPages) { // FETCHING 
+                // ALL NEWS AND DISPLAY IT ON THE DOM
+                fetchNews(newsApi).then(data => { setObjectToHtmlDom(data); console.log(data, category); });
+            }
         }
     });
-
 
 });
 
