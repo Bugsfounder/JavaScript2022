@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>My Alarm Clock</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <h1>Welcome to MyAlarm Clock</h1>
+
+        <div class="container inputContainer">
+            <input class="input" type="text" name="alarmName" id="alarmName" placeholder="Enter Task Name">
+            <input class="input" type="text" name="alarmTime" id="alarmTime" placeholder="mm/dd/yyyy HH:MM:SS">
+            <button class="btn setAlarmBtn" id="setAlarmBtn">Set Alarm</button>
+            <button class="btn setAlarmBtn" id="stopAlarmBtn" hidden>Stop Alarm</button>
+        </div>
+
+        <hr>
+        <h1>Your All Alarms</h1>
+        <div id="titles">
+
+        </div>
+
+        <div class="container allAlarms" id="allAlarms">
+            <table id="table">
+                <thead>
+                    <tr>
+                        <th>SL.NO.</th>
+                        <th>Name</th>
+                        <th>Time</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody id="alarmsContainer">
+
+
+
+
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+    <script src="js/index.js"></script>
+</body>
+
+</html>

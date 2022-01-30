@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 80vw;
+  margin: auto;
+}
+
+.container h1 {
+  text-align: center;
+  font-family: sans-serif;
+  margin: 12px;
+  font-size: 2rem;
+}
+
+.inputContainer {
+  text-align: center;
+  margin: 26px 0;
+}
+
+.input {
+  width: 30%;
+  padding: 5px;
+  font-size: 1.5rem;
+  border-radius: 8px;
+  border: 2px solid #bebebe;
+  font-family: ui-sans-serif;
+  outline: none;
+}
+
+.btn {
+  font-size: 1.4rem;
+  padding: 5px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2px solid #bebebe;
+  background: #00ff37;
+  color: white;
+  font-family: sans-serif;
+}
+.btn:hover {
+  background-color: #5ae778;
+}
+
+.setAlarmBtn {
+  width: 15%;
+}
+
+.danger {
+  background-color: rgba(231, 111, 111, 0.836);
+  color: white;
+}
+
+.danger:hover {
+  background-color: rgba(230, 88, 88, 0.836);
+  color: white;
+}
+
+.allAlarms table {
+  border: 2px solid rgb(143, 139, 139);
+  width: 100%;
+}
+
+.allAlarms table thead {
+  border: 2px solid rgb(143, 139, 139);
+}
+
+.allAlarms table thead tr th {
+  border: 2px solid rgb(143, 139, 139);
+  padding: 5px;
+  font-size: 1.4rem;
+  font-family: sans-serif;
+}
+
+.allAlarms table tbody {
+  border: 2px solid rgb(143, 139, 139);
+}
+
+.allAlarms table tbody tr td {
+  border: 2px solid rgb(143, 139, 139);
+  padding: 4px;
+  font-size: 1.3rem;
+  font-family: sans-serif;
+}
+
+.actionContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.actionContainer btn {
+  margin: 0 9px;
+}
+
+.text-center {
+  text-align: center;
+}
